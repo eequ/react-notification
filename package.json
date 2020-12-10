@@ -10,6 +10,7 @@
     "react-component",
     "notification"
   ],
+  "homepage": "https://github.com/eequ/react-notification#readme",
   "author": "Eequ Ltd",
   "maintainers": [
     {
@@ -17,6 +18,13 @@
       "email": "victor@eequ.org"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/eequ/react-notification.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eequ/react-notification/issues"
+  },
   "source": "src/index.tsx",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
