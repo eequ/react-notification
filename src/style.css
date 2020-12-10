@@ -1,0 +1,128 @@
+.eequ-notification {
+  position: fixed;
+  z-index: 20000;
+}
+
+.eequ-notification-notice {
+  background: white;
+  margin: 16px 0px;
+  padding: 16px;
+  display: flex;
+  border-radius: 3px;
+  box-sizing: border-box;
+  box-shadow: rgba(9, 30, 66, 0.15) 0px 0px 1px,
+    rgba(9, 30, 66, 0.2) 0px 10px 16px -4px;
+  width: 380px;
+  max-width: calc(100vw - 48px);
+}
+
+.eequ-notification-topLeft {
+  top: 24px;
+  bottom: auto;
+  left: 0px;
+  margin-left: 24px;
+  margin-right: 0;
+}
+
+.eequ-notification-topRight {
+  top: 24px;
+  bottom: auto;
+  right: 0px;
+  margin-right: 24px;
+  margin-left: 0;
+}
+
+.eequ-notification-bottomLeft {
+  top: auto;
+  bottom: 24px;
+  left: 0px;
+  margin-right: 0;
+  margin-left: 24px;
+}
+
+.eequ-notification-bottomRight {
+  top: auto;
+  bottom: 24px;
+  right: 0px;
+  margin-right: 24px;
+  margin-left: 0;
+}
+
+.eequ-notification-notice-content-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.eequ-notification-notice-content {
+  width: 100%;
+  max-height: 150px;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0px;
+}
+
+.eequ-notification-notice-with-type .eequ-notification-notice-content {
+  padding: 0px 0px 0px 40px;
+}
+.eequ-notification-notice-with-type .eequ-notification-notice-message {
+  padding: 0px 0px 0px 16px;
+}
+
+.eequ-notification-notice-icon {
+  flex-shrink: 0;
+  line-height: 1;
+  width: 24px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.eequ-notification-notice-header {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.eequ-notification-notice-close {
+  appearance: none;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  color: #151b26;
+  cursor: pointer;
+  flex: 0 0 auto;
+  line-height: 1;
+  margin-left: 8px;
+  padding: 0px;
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.eequ-notification-notice-close > span {
+  display: inline-block;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.eequ-notification-notice-message {
+  font-weight: 600;
+  flex: 1 1 0%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.eequ-notification-notice-description {
+  overflow-wrap: break-word;
+  overflow: auto;
+  max-height: 100px;
+  color: #484848;
+  margin: 0;
+}
+
+.eequ-notification-notice-actions {
+  margin-top: 8px;
+}

@@ -1,0 +1,11 @@
+# file
+.gitignore
+.npmignore
+tsconfig.json
+package-lock.json
+
+# folder
+.git
+/node_modules
+/example
+/src

@@ -1,0 +1,48 @@
+{
+  "name": "@eequ/notification",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "React Notification UI Component",
+  "keywords": [
+    "eequ",
+    "react",
+    "component",
+    "react-component",
+    "notification"
+  ],
+  "author": "Eequ Ltd",
+  "maintainers": [
+    {
+      "name": "Victor Șaptefrați",
+      "email": "victor@eequ.org"
+    }
+  ],
+  "source": "src/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "umd:main": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "microbundle --jsx React.createElement --css-modules false",
+    "dev": "microbundle watch --jsx React.createElement --css-modules false"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "framer-motion": "^2.9.5"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.11",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "microbundle": "^0.12.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "framer-motion": "^2.9.5",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "react-use": "^15.3.4"
+  }
+}
