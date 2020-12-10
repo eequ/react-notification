@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import CloseIcon from "icons/close";
 import React from "react";
 import ReactDOM from "react-dom";
-import { usePrevious, useTimeoutFn } from "react-use";
+import { usePrevious, useTimeout } from "utils";
 import { NoticeProps } from "./types";
 
 /**
@@ -31,7 +31,7 @@ const Notice: React.FC<NoticeProps> = (props) => {
     onClose(props.noticeKey);
   };
 
-  const [, cancel, reset] = useTimeoutFn(handleClose, duration * 1000);
+  const [cancel, reset] = useTimeout(handleClose, duration * 1000);
 
   const prevProps = usePrevious({ duration });
   if (props.duration !== prevProps?.duration) {
