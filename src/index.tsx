@@ -1,3 +1,4 @@
+import cn from "classnames";
 import notificationIcons from "icons/notificationIcons";
 import React, { createElement } from "react";
 import createUseNotification from "./hooks/useNotification";
@@ -95,13 +96,15 @@ const getNoticeProps = (args: ArgsProps, prefixCls: string) => {
     args.duration === undefined ? defaultDuration : args.duration;
 
   let iconNode: React.ReactNode = null;
+  const iconClassName = cn(
+    `${prefixCls}-icon`,
+    `${prefixCls}-icon-${args.type}`
+  );
   if (args.icon) {
-    iconNode = <span className={`${prefixCls}-icon`}>{args.icon}</span>;
+    iconNode = <span className={iconClassName}>{args.icon}</span>;
   } else if (args.type) {
-    const iconElement = createElement(notificationIcons[args.type] || null, {
-      className: `${prefixCls}-icon-${args.type}`,
-    });
-    iconNode = <span className={`${prefixCls}-icon`}>{iconElement}</span>;
+    const iconElement = createElement(notificationIcons[args.type] || null);
+    iconNode = <span className={iconClassName}>{iconElement}</span>;
   }
 
   const { onClose, onClick, key, style = {}, className } = args;
@@ -163,4 +166,6 @@ api.useNotification = createUseNotification(
   getNoticeProps
 );
 
-export default api as NotificationApi;
+export const notification = api as NotificationApi;
+
+export default notification;

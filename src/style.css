@@ -32,6 +32,13 @@
   margin-left: 0;
 }
 
+.eequ-notification-topCenter {
+  bottom: auto;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .eequ-notification-bottomLeft {
   top: auto;
   bottom: 24px;
@@ -46,6 +53,13 @@
   right: 0px;
   margin-right: 24px;
   margin-left: 0;
+}
+
+.eequ-notification-bottomCenter {
+  top: auto;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .eequ-notification-notice-content-wrapper {
@@ -78,6 +92,19 @@
   font-size: 24px;
   display: flex;
   justify-content: center;
+}
+
+.eequ-notification-notice-icon-success {
+  color: #4caf50;
+}
+.eequ-notification-notice-icon-error {
+  color: #f44336;
+}
+.eequ-notification-notice-icon-info {
+  color: #2979ff;
+}
+.eequ-notification-notice-icon-warning {
+  color: #ffc107;
 }
 
 .eequ-notification-notice-header {

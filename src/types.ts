@@ -72,14 +72,18 @@ export type callbackParams = {
 export type NotificationPlacement =
   | "topLeft"
   | "topRight"
+  | "topCenter"
   | "bottomLeft"
-  | "bottomRight";
+  | "bottomRight"
+  | "bottomCenter";
 
 export enum NotificationPlacementEnum {
   topLeft = "topLeft",
   topRight = "topRight",
+  topCenter = "topCenter",
   bottomLeft = "bottomLeft",
   bottomRight = "bottomRight",
+  bottomCenter = "bottomCenter",
 }
 
 export type NotificationType = "success" | "info" | "error" | "warning";
