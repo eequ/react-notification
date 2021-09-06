@@ -11,13 +11,21 @@ import {
   NotificationApi,
   NotificationInstance,
   NotificationPlacement,
+  NotificationType,
 } from "./types";
 
 const notificationInstance: Record<string, Promise<NotificationInstance>> = {};
 
+const defaultMessage: Record<NotificationType, string> = {
+  ["info"]: "Info",
+  ["error"]: "Error",
+  ["success"]: "Success",
+  ["warning"]: "Warning",
+};
+
 let defaultDuration = 4.5;
 let defaultPrefixCls = "eequ-notification";
-let defaultPlacement: NotificationPlacement = "bottomRight";
+let defaultPlacement: NotificationPlacement = "topCenter";
 let defaultGetContainer: () => HTMLElement;
 
 /**
@@ -35,7 +43,7 @@ const setNotificationConfig = (options: ConfigProps) => {
     defaultDuration = duration;
   }
   if (placement !== undefined) {
-    defaultPlacement = "bottomRight";
+    defaultPlacement = placement;
   }
   if (getContainer !== undefined) {
     defaultGetContainer = getContainer;
@@ -53,10 +61,8 @@ const getNotificationInstance = (
   args: ArgsProps,
   callback: (params: callbackParams) => void
 ) => {
-  const {
-    placement = defaultPlacement,
-    getContainer = defaultGetContainer,
-  } = args;
+  const { placement = defaultPlacement, getContainer = defaultGetContainer } =
+    args;
   const outerPrefixCls = args.prefixCls || defaultPrefixCls;
   const prefixCls = `${outerPrefixCls}-notice`;
 
@@ -107,8 +113,9 @@ const getNoticeProps = (args: ArgsProps, prefixCls: string) => {
     iconNode = <span className={iconClassName}>{iconElement}</span>;
   }
 
-  const { onClose, onClick, key, style = {}, className } = args;
-  const { message, content, closable } = args;
+  const { key, className, style = {} } = args;
+  const { content, closable, onClose, onClick } = args;
+  const { type, message = defaultMessage[type], filled = true } = args;
 
   const actions = args.actions ? (
     <div className={`${prefixCls}-action`}>{args.actions}</div>
@@ -116,6 +123,8 @@ const getNoticeProps = (args: ArgsProps, prefixCls: string) => {
 
   return {
     key,
+    type,
+    filled,
     actions,
     iconNode,
     message,

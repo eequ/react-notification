@@ -8,7 +8,7 @@
   margin: 16px 0px;
   padding: 16px;
   display: flex;
-  border-radius: 3px;
+  border-radius: 8px;
   box-sizing: border-box;
   box-shadow: rgba(9, 30, 66, 0.15) 0px 0px 1px,
     rgba(9, 30, 66, 0.2) 0px 10px 16px -4px;
@@ -95,16 +95,38 @@
 }
 
 .eequ-notification-notice-icon-success {
-  color: #4caf50;
+  color: #00bc37;
 }
+.eequ-notification-notice-success {
+  background: #00bc37;
+}
+
 .eequ-notification-notice-icon-error {
-  color: #f44336;
+  color: #f02e35;
 }
+.eequ-notification-notice-error {
+  background: #f02e35;
+}
+
 .eequ-notification-notice-icon-info {
-  color: #2979ff;
+  color: #524ccb;
 }
+.eequ-notification-notice-info {
+  background: #524ccb;
+}
+
 .eequ-notification-notice-icon-warning {
-  color: #ffc107;
+  color: #ffba26;
+}
+.eequ-notification-notice-warning {
+  background: #ffba26;
+}
+
+.eequ-notification-notice-white .eequ-notification-notice-icon,
+.eequ-notification-notice-white .eequ-notification-notice-close,
+.eequ-notification-notice-white .eequ-notification-notice-message,
+.eequ-notification-notice-white .eequ-notification-notice-description {
+  color: white !important;
 }
 
 .eequ-notification-notice-header {

@@ -10,7 +10,7 @@ import { NoticeProps } from "./types";
  * Comoponent that is diplayed inside notifications wrapper.
  */
 const Notice: React.FC<NoticeProps> = (props) => {
-  const { onClose, duration = 3 } = props;
+  const { onClose, duration = 3, filled, type } = props;
   const { message, actions, iconNode, children } = props;
 
   const handleClose = () => {
@@ -53,6 +53,8 @@ const Notice: React.FC<NoticeProps> = (props) => {
   const className = cn(componentClass, props.className, "notice", {
     [`${componentClass}-closable`]: closable,
     [`${componentClass}-with-type`]: iconNode,
+    [`${componentClass}-${type}`]: filled,
+    [`${componentClass}-white`]: filled,
   });
 
   const node = (

@@ -39,6 +39,8 @@ export interface NoticeProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>;
   onClose?: (key: React.Key) => void;
   holder?: HTMLDivElement;
+  filled?: boolean;
+  type?: NotificationType;
 }
 
 export interface NoticeContent
@@ -89,7 +91,7 @@ export enum NotificationPlacementEnum {
 export type NotificationType = "success" | "info" | "error" | "warning";
 
 export interface ArgsProps {
-  message: React.ReactNode;
+  message?: React.ReactNode;
   content?: React.ReactNode;
   actions?: React.ReactNode;
   key?: string;
@@ -110,6 +112,7 @@ export interface ArgsProps {
   getContainer?: () => HTMLElement;
   closeIcon?: React.ReactNode;
   closable?: boolean;
+  filled?: boolean;
 }
 
 export interface NotificationVariants {
